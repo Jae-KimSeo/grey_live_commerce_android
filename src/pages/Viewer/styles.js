@@ -7,6 +7,17 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#3498db',
   },
+  replayConatiner:{
+    flex: 3,
+  },
+  btnPast:{
+    position : 'absolute',
+	  bottom : 70,
+	  left: 15,
+  },
+  PastText:{
+    color: 'white',
+  },  
   blackContainer: {
     flex: 1,
     backgroundColor: 'black',
@@ -42,6 +53,12 @@ const styles = StyleSheet.create({
     width: 30,
     height: 30,
   },
+  PIP : {
+    bottom: 70,
+    left: 15,
+    width: 100,
+    height: 100,
+  }
 });
 
 export default styles;

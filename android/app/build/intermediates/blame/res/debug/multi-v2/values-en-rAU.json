@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/toispre/Desktop/나만의무기/react-native-live-stream-rtmp-example/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-en-rAU/values-en-rAU.xml",
+            "outputFile": "/Users/toispre/Desktop/나만의무기/grey_live_commerce_android/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-en-rAU/values-en-rAU.xml",
             "map": [
                 {
                     "source": "/Users/toispre/.gradle/caches/transforms-3/7dc151db95d6eb3b90152777f15def87/transformed/appcompat-1.1.0/res/values-en-rAU/values-en-rAU.xml",

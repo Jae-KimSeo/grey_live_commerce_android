@@ -24,6 +24,21 @@ androidx/vectordrawable/R.java
  androidx.vectordrawable.R$string
  androidx.vectordrawable.R$style
  androidx.vectordrawable.R$styleable
+com/brentvatne/react/R.java
+ com.brentvatne.react.R
+ com.brentvatne.react.R$anim
+ com.brentvatne.react.R$attr
+ com.brentvatne.react.R$bool
+ com.brentvatne.react.R$color
+ com.brentvatne.react.R$dimen
+ com.brentvatne.react.R$drawable
+ com.brentvatne.react.R$id
+ com.brentvatne.react.R$integer
+ com.brentvatne.react.R$layout
+ com.brentvatne.react.R$string
+ com.brentvatne.react.R$style
+ com.brentvatne.react.R$styleable
+ com.brentvatne.react.R$xml
 com/facebook/imagepipelinebase/R.java
  com.facebook.imagepipelinebase.R
 androidx/lifecycle/livedata/core/R.java
@@ -131,9 +146,18 @@ com/facebook/flipper/plugins/fresco/R.java
  com.facebook.flipper.plugins.fresco.R$string
  com.facebook.flipper.plugins.fresco.R$style
  com.facebook.flipper.plugins.fresco.R$styleable
-com/livestreamexample/MainApplication.java
- com.livestreamexample.MainApplication
- com.livestreamexample.MainApplication$1
+androidx/viewpager2/R.java
+ androidx.viewpager2.R
+ androidx.viewpager2.R$attr
+ androidx.viewpager2.R$color
+ androidx.viewpager2.R$dimen
+ androidx.viewpager2.R$drawable
+ androidx.viewpager2.R$id
+ androidx.viewpager2.R$integer
+ androidx.viewpager2.R$layout
+ androidx.viewpager2.R$string
+ androidx.viewpager2.R$style
+ androidx.viewpager2.R$styleable
 androidx/interpolator/R.java
  androidx.interpolator.R
 androidx/core/R.java
@@ -188,6 +212,20 @@ cn/nodemedia/R.java
  cn.nodemedia.R$string
  cn.nodemedia.R$style
  cn.nodemedia.R$styleable
+com/yqritc/scalablevideoview/R.java
+ com.yqritc.scalablevideoview.R
+ com.yqritc.scalablevideoview.R$anim
+ com.yqritc.scalablevideoview.R$attr
+ com.yqritc.scalablevideoview.R$bool
+ com.yqritc.scalablevideoview.R$color
+ com.yqritc.scalablevideoview.R$dimen
+ com.yqritc.scalablevideoview.R$drawable
+ com.yqritc.scalablevideoview.R$id
+ com.yqritc.scalablevideoview.R$integer
+ com.yqritc.scalablevideoview.R$layout
+ com.yqritc.scalablevideoview.R$string
+ com.yqritc.scalablevideoview.R$style
+ com.yqritc.scalablevideoview.R$styleable
 androidx/drawerlayout/R.java
  androidx.drawerlayout.R
  androidx.drawerlayout.R$attr
@@ -204,6 +242,21 @@ androidx/versionedparcelable/R.java
  androidx.versionedparcelable.R
 com/facebook/soloader/R.java
  com.facebook.soloader.R
+com/reactlibrary/R.java
+ com.reactlibrary.R
+ com.reactlibrary.R$anim
+ com.reactlibrary.R$attr
+ com.reactlibrary.R$bool
+ com.reactlibrary.R$color
+ com.reactlibrary.R$dimen
+ com.reactlibrary.R$drawable
+ com.reactlibrary.R$id
+ com.reactlibrary.R$integer
+ com.reactlibrary.R$layout
+ com.reactlibrary.R$string
+ com.reactlibrary.R$style
+ com.reactlibrary.R$styleable
+ com.reactlibrary.R$xml
 com/facebook/imagepipeline/backends/okhttp3/R.java
  com.facebook.imagepipeline.backends.okhttp3.R
 androidx/lifecycle/viewmodel/R.java
@@ -392,8 +445,18 @@ com/facebook/flipper/plugins/network/R.java
  com.facebook.flipper.plugins.network.R$string
  com.facebook.flipper.plugins.network.R$style
  com.facebook.flipper.plugins.network.R$styleable
-com/facebook/react/PackageList.java
- com.facebook.react.PackageList
+androidx/vectordrawable/animated/R.java
+ androidx.vectordrawable.animated.R
+ androidx.vectordrawable.animated.R$attr
+ androidx.vectordrawable.animated.R$color
+ androidx.vectordrawable.animated.R$dimen
+ androidx.vectordrawable.animated.R$drawable
+ androidx.vectordrawable.animated.R$id
+ androidx.vectordrawable.animated.R$integer
+ androidx.vectordrawable.animated.R$layout
+ androidx.vectordrawable.animated.R$string
+ androidx.vectordrawable.animated.R$style
+ androidx.vectordrawable.animated.R$styleable
 com/facebook/drawee/R.java
  com.facebook.drawee.R
  com.facebook.drawee.R$attr
@@ -451,27 +514,23 @@ com/swmansion/gesturehandler/react/R.java
  com.swmansion.gesturehandler.react.R$style
  com.swmansion.gesturehandler.react.R$styleable
  com.swmansion.gesturehandler.react.R$xml
-androidx/vectordrawable/animated/R.java
- androidx.vectordrawable.animated.R
- androidx.vectordrawable.animated.R$attr
- androidx.vectordrawable.animated.R$color
- androidx.vectordrawable.animated.R$dimen
- androidx.vectordrawable.animated.R$drawable
- androidx.vectordrawable.animated.R$id
- androidx.vectordrawable.animated.R$integer
- androidx.vectordrawable.animated.R$layout
- androidx.vectordrawable.animated.R$string
- androidx.vectordrawable.animated.R$style
- androidx.vectordrawable.animated.R$styleable
-androidx/viewpager2/R.java
- androidx.viewpager2.R
- androidx.viewpager2.R$attr
- androidx.viewpager2.R$color
- androidx.viewpager2.R$dimen
- androidx.viewpager2.R$drawable
- androidx.viewpager2.R$id
- androidx.viewpager2.R$integer
- androidx.viewpager2.R$layout
- androidx.viewpager2.R$string
- androidx.viewpager2.R$style
- androidx.viewpager2.R$styleable
+com/livestreamexample/MainApplication.java
+ com.livestreamexample.MainApplication
+ com.livestreamexample.MainApplication$1
+com/facebook/react/PackageList.java
+ com.facebook.react.PackageList
+com/rnfs/R.java
+ com.rnfs.R
+ com.rnfs.R$anim
+ com.rnfs.R$attr
+ com.rnfs.R$bool
+ com.rnfs.R$color
+ com.rnfs.R$dimen
+ com.rnfs.R$drawable
+ com.rnfs.R$id
+ com.rnfs.R$integer
+ com.rnfs.R$layout
+ com.rnfs.R$string
+ com.rnfs.R$style
+ com.rnfs.R$styleable
+ com.rnfs.R$xml

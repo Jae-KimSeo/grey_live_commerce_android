@@ -6,7 +6,7 @@ import styles from './styles';
 
 const LiveStreamActionButton = ({ currentLiveStatus, onPress }) => {
   let backgroundColor = '#9b59b6';
-  let text = 'Start live video';
+  let text = 'Start live videos';
   if (Number(currentLiveStatus) === Number(LIVE_STATUS.ON_LIVE)) {
     backgroundColor = '#e74c3c';
     text = 'Stop live stream';

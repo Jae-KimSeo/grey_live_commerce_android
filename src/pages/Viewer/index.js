@@ -11,6 +11,9 @@ import ChatInputGroup from '../../components/ChatInputGroup';
 import MessagesList from '../../components/MessagesList/MessagesList';
 import { LIVE_STATUS } from '../../utils/constants';
 import { RTMP_SERVER } from '../../config';
+import Video from 'react-native-video';
+import RNFS from 'react-native-fs';
+import { HLS } from '../../config';
 
 export default class Viewer extends Component {
   constructor(props) {
@@ -26,6 +29,7 @@ export default class Viewer extends Component {
       countHeart: 0,
       isVisibleMessages: true,
       inputUrl: null,
+      loading_video: [],
     };
     this.roomName = roomName;
     this.userName = userName;
@@ -143,6 +147,7 @@ export default class Viewer extends Component {
     navigation.goBack();
   };
 
+
   renderBackgroundColors = () => {
     const backgroundColor = this.Animation.interpolate({
       inputRange: [0, 0.2, 0.4, 0.6, 0.8, 1],
@@ -195,6 +200,37 @@ export default class Viewer extends Component {
     return <MessagesList messages={messages} />;
   };
 
+  renderPastVideo = () => {
+    var currentVideo = `${RTMP_SERVER}/live/${this.roomName}/index.m3u8`
+    RNFS.readFile(currentVideo, 'ascii')
+      .then((content) => {
+        this.setState({
+          loading_video : content,
+        })
+      .catch((err) => {
+          console.log(err.message, err.code);
+        });
+      });
+    return <Text style={styles.btnPast}> content </Text>;
+    /* 
+    const { inputUrl } = `${RTMP_SERVER}/live/${this.roomName}`;
+    if (!inputUrl) return null;
+    return (
+      <Video source={{inputUrl}}
+        ref={(ref) => {
+          this.player = ref
+        }}
+        onBuffer={this.onBuffer}
+        onError={this.videoError}
+        style={styles.PIP} />
+    );
+    */
+  };
+
+  onPressPast = () => {
+    {this.renderPastVideo()}
+  };
+
   render() {
     const { countHeart } = this.state;
     /**
@@ -228,12 +264,18 @@ export default class Viewer extends Component {
         <TouchableOpacity style={styles.btnClose} onPress={this.onPressClose}>
           <Image
             style={styles.icoClose}
-            source={require('../../assets/close.png')}
+            source={require('../../assets/ico_play.png')}
             tintColor="white"
           />
         </TouchableOpacity>
+        <TouchableOpacity style={styles.btnPast} onPress={this.onPressPast}>
+          <Text style={styles.PastText}>
+            Go To Past!
+          </Text>
+        </TouchableOpacity>
         <FloatingHearts count={countHeart} />
       </View>
+
     );
   }
 }

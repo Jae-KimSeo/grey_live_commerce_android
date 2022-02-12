@@ -18,6 +18,7 @@ import ChatInputGroup from '../../components/ChatInputGroup';
 import MessagesList from '../../components/MessagesList/MessagesList';
 import FloatingHearts from '../../components/FloatingHearts';
 import { RTMP_SERVER } from '../../config';
+import { HLS } from '../../config';
 import Logger from '../../utils/logger';
 
 export default class Streamer extends React.Component {
