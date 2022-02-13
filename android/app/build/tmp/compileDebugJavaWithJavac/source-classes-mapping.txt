@@ -457,6 +457,21 @@ androidx/vectordrawable/animated/R.java
  androidx.vectordrawable.animated.R$string
  androidx.vectordrawable.animated.R$style
  androidx.vectordrawable.animated.R$styleable
+com/rnfs/R.java
+ com.rnfs.R
+ com.rnfs.R$anim
+ com.rnfs.R$attr
+ com.rnfs.R$bool
+ com.rnfs.R$color
+ com.rnfs.R$dimen
+ com.rnfs.R$drawable
+ com.rnfs.R$id
+ com.rnfs.R$integer
+ com.rnfs.R$layout
+ com.rnfs.R$string
+ com.rnfs.R$style
+ com.rnfs.R$styleable
+ com.rnfs.R$xml
 com/facebook/drawee/R.java
  com.facebook.drawee.R
  com.facebook.drawee.R$attr
@@ -514,23 +529,23 @@ com/swmansion/gesturehandler/react/R.java
  com.swmansion.gesturehandler.react.R$style
  com.swmansion.gesturehandler.react.R$styleable
  com.swmansion.gesturehandler.react.R$xml
+com/oblador/vectoricons/R.java
+ com.oblador.vectoricons.R
+ com.oblador.vectoricons.R$anim
+ com.oblador.vectoricons.R$attr
+ com.oblador.vectoricons.R$bool
+ com.oblador.vectoricons.R$color
+ com.oblador.vectoricons.R$dimen
+ com.oblador.vectoricons.R$drawable
+ com.oblador.vectoricons.R$id
+ com.oblador.vectoricons.R$integer
+ com.oblador.vectoricons.R$layout
+ com.oblador.vectoricons.R$string
+ com.oblador.vectoricons.R$style
+ com.oblador.vectoricons.R$styleable
+ com.oblador.vectoricons.R$xml
 com/livestreamexample/MainApplication.java
  com.livestreamexample.MainApplication
  com.livestreamexample.MainApplication$1
 com/facebook/react/PackageList.java
  com.facebook.react.PackageList
-com/rnfs/R.java
- com.rnfs.R
- com.rnfs.R$anim
- com.rnfs.R$attr
- com.rnfs.R$bool
- com.rnfs.R$color
- com.rnfs.R$dimen
- com.rnfs.R$drawable
- com.rnfs.R$id
- com.rnfs.R$integer
- com.rnfs.R$layout
- com.rnfs.R$string
- com.rnfs.R$style
- com.rnfs.R$styleable
- com.rnfs.R$xml

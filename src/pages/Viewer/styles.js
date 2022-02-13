@@ -7,6 +7,14 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#3498db',
   },
+  ModalContainer: {
+    flex: 3,
+    zIndex: 2,
+  },
+  PIPContainer: {
+    flex: 3,
+    zIndex: 3,
+  },
   replayConatiner:{
     flex: 3,
   },
@@ -14,10 +22,17 @@ const styles = StyleSheet.create({
     position : 'absolute',
 	  bottom : 70,
 	  left: 15,
+    zIndex: 3,
   },
   PastText:{
+  },
+   
+  Modal:{
     color: 'white',
-  },  
+    bottom: 100,
+    left: 15,
+  },
+  
   blackContainer: {
     flex: 1,
     backgroundColor: 'black',
@@ -53,11 +68,12 @@ const styles = StyleSheet.create({
     width: 30,
     height: 30,
   },
-  PIP : {
+  PIP: {
     bottom: 70,
     left: 15,
     width: 100,
     height: 100,
+    zIndex:2,
   }
 });
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { View, Image, TouchableOpacity, Text, SafeAreaView, Animated, Alert } from 'react-native';
+import { View, Image, TouchableOpacity, Text, SafeAreaView, Animated, Alert, TextInput } from 'react-native';
 import get from 'lodash/get';
 import { NodePlayerView } from 'react-native-nodemediaclient';
 import moment from 'moment';
@@ -11,6 +11,10 @@ import ChatInputGroup from '../../components/ChatInputGroup';
 import MessagesList from '../../components/MessagesList/MessagesList';
 import { LIVE_STATUS } from '../../utils/constants';
 import { RTMP_SERVER } from '../../config';
+import SimplePIP from './SimplePip.js'
+<script src="http://localhost:8097"></script>
+
+//import OverlayModal from 'react-native-overlay-video-player'
 import Video from 'react-native-video';
 import RNFS from 'react-native-fs';
 import { HLS } from '../../config';
@@ -29,7 +33,6 @@ export default class Viewer extends Component {
       countHeart: 0,
       isVisibleMessages: true,
       inputUrl: null,
-      loading_video: [],
     };
     this.roomName = roomName;
     this.userName = userName;
@@ -201,22 +204,16 @@ export default class Viewer extends Component {
   };
 
   renderPastVideo = () => {
-    var currentVideo = `${RTMP_SERVER}/live/${this.roomName}/index.m3u8`
-    RNFS.readFile(currentVideo, 'ascii')
-      .then((content) => {
-        this.setState({
-          loading_video : content,
-        })
-      .catch((err) => {
-          console.log(err.message, err.code);
-        });
-      });
-    return <Text style={styles.btnPast}> content </Text>;
-    /* 
-    const { inputUrl } = `${RTMP_SERVER}/live/${this.roomName}`;
-    if (!inputUrl) return null;
+    const inputUrl  = `${RTMP_SERVER}/live/${this.roomName}/test_image.png`;
+    if (!inputUrl) {
+      return null;
+    }
+        //<OverlayModal style={styles.PIP} source={{inputUrl}}/>
+
+    /*
     return (
       <Video source={{inputUrl}}
+      style={styles.PIP}
         ref={(ref) => {
           this.player = ref
         }}
@@ -228,8 +225,8 @@ export default class Viewer extends Component {
   };
 
   onPressPast = () => {
-    {this.renderPastVideo()}
-  };
+    const inputUrl  = `${RTMP_SERVER}/live/test_image.png`;
+  }
 
   render() {
     const { countHeart } = this.state;
@@ -268,11 +265,7 @@ export default class Viewer extends Component {
             tintColor="white"
           />
         </TouchableOpacity>
-        <TouchableOpacity style={styles.btnPast} onPress={this.onPressPast}>
-          <Text style={styles.PastText}>
-            Go To Past!
-          </Text>
-        </TouchableOpacity>
+        <SimplePIP/>  
         <FloatingHearts count={countHeart} />
       </View>
 

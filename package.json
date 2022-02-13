@@ -26,10 +26,13 @@
     "react-native-fs": "^2.18.0",
     "react-native-gesture-handler": "^1.6.1",
     "react-native-nodemediaclient": "^0.1.9",
+    "react-native-overlay-video-player": "^1.0.0",
     "react-native-reanimated": "^1.8.0",
     "react-native-safe-area-context": "^0.7.3",
     "react-native-screens": "^2.5.0",
+    "react-native-slider": "^0.11.0",
     "react-native-sticky-keyboard-accessory": "^0.1.3",
+    "react-native-vector-icons": "^9.0.0",
     "react-native-video": "^5.2.0",
     "socket.io-client": "^2.3.0"
   },
