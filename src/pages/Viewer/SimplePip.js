@@ -25,7 +25,7 @@ export default class SimplePIP extends Component {
       <View style={styles.PIPcontainer}>
         <TouchableOpacity style={styles.btnPast} onPress={() => {this._onPressItem()}}>
             <Text style={styles.PastText}>
-              Go To Past!
+              Get Multi-live-view!
             </Text>
         </TouchableOpacity>
         <OverlayModal show={this.state.show}/>

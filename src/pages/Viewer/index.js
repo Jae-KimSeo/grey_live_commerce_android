@@ -12,7 +12,7 @@ import MessagesList from '../../components/MessagesList/MessagesList';
 import { LIVE_STATUS } from '../../utils/constants';
 import { RTMP_SERVER } from '../../config';
 import SimplePIP from './SimplePip.js'
-<script src="http://localhost:8097"></script>
+
 
 //import OverlayModal from 'react-native-overlay-video-player'
 import Video from 'react-native-video';
