@@ -1,5 +1,12 @@
 rootProject.name = 'LiveStreamExample'
 include ':react-native-android-pip'
 project(':react-native-android-pip').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-android-pip/android')
+include ':react-native-home-pressed'
+project(':react-native-home-pressed').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-home-pressed/android')
 apply from: file("../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesSettingsGradle(settings)
 include ':app'
+include ':react-native-home-pressed'
+project(':react-native-home-pressed').projectDir = new File(rootProject.projectDir,   '../node_modules/react-native-home-pressed/android')
+include ':unimodules-react-native-adapter'
+project(':unimodules-react-native-adapter').projectDir = new File(rootProject.projectDir, '../node_modules/@unimodules/react-native-adapter/android')
+apply from: '../node_modules/react-native-unimodules/gradle.groovy'; includeUnimodulesProjects ()

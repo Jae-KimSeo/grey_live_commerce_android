@@ -13,14 +13,20 @@ import java.util.ArrayList;
 
 // @react-native-community/masked-view
 import org.reactnative.maskedview.RNCMaskedViewPackage;
+// @unimodules/react-native-adapter
+import org.unimodules.adapters.react.ModuleRegistryAdapter;
 // react-native-android-pip
 import com.reactlibrary.RNAndroidPipPackage;
 // react-native-fs
 import com.rnfs.RNFSPackage;
 // react-native-gesture-handler
 import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
+// react-native-home-pressed
+import com.evanjmg.RNHomePressedPackage;
 // react-native-nodemediaclient
 import cn.nodemedia.react_native_nodemediaclient.NodeMediaReactPackage;
+// react-native-picture-in-picture
+import com.reactlibrarypip.PictureInPicturePackage;
 // react-native-reanimated
 import com.swmansion.reanimated.ReanimatedPackage;
 // react-native-safe-area-context
@@ -77,10 +83,13 @@ public class PackageList {
     return new ArrayList<>(Arrays.<ReactPackage>asList(
       new MainReactPackage(mConfig),
       new RNCMaskedViewPackage(),
+      new ModuleRegistryAdapter(),
       new RNAndroidPipPackage(),
       new RNFSPackage(),
       new RNGestureHandlerPackage(),
+      new RNHomePressedPackage(),
       new NodeMediaReactPackage(),
+      new PictureInPicturePackage(),
       new ReanimatedPackage(),
       new SafeAreaContextPackage(),
       new RNScreensPackage(),

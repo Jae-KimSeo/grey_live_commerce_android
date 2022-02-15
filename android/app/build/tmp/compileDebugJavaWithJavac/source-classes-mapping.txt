@@ -99,6 +99,21 @@ androidx/fragment/R.java
  androidx.fragment.R$styleable
 androidx/savedstate/R.java
  androidx.savedstate.R
+com/evanjmg/R.java
+ com.evanjmg.R
+ com.evanjmg.R$anim
+ com.evanjmg.R$attr
+ com.evanjmg.R$bool
+ com.evanjmg.R$color
+ com.evanjmg.R$dimen
+ com.evanjmg.R$drawable
+ com.evanjmg.R$id
+ com.evanjmg.R$integer
+ com.evanjmg.R$layout
+ com.evanjmg.R$string
+ com.evanjmg.R$style
+ com.evanjmg.R$styleable
+ com.evanjmg.R$xml
 com/facebook/react/R.java
  com.facebook.react.R
  com.facebook.react.R$anim
@@ -146,18 +161,9 @@ com/facebook/flipper/plugins/fresco/R.java
  com.facebook.flipper.plugins.fresco.R$string
  com.facebook.flipper.plugins.fresco.R$style
  com.facebook.flipper.plugins.fresco.R$styleable
-androidx/viewpager2/R.java
- androidx.viewpager2.R
- androidx.viewpager2.R$attr
- androidx.viewpager2.R$color
- androidx.viewpager2.R$dimen
- androidx.viewpager2.R$drawable
- androidx.viewpager2.R$id
- androidx.viewpager2.R$integer
- androidx.viewpager2.R$layout
- androidx.viewpager2.R$string
- androidx.viewpager2.R$style
- androidx.viewpager2.R$styleable
+com/livestreamexample/MainApplication.java
+ com.livestreamexample.MainApplication
+ com.livestreamexample.MainApplication$1
 androidx/interpolator/R.java
  androidx.interpolator.R
 androidx/core/R.java
@@ -198,6 +204,23 @@ androidx/recyclerview/R.java
  androidx.recyclerview.R$string
  androidx.recyclerview.R$style
  androidx.recyclerview.R$styleable
+expo/modules/R.java
+ expo.modules.R
+com/oblador/vectoricons/R.java
+ com.oblador.vectoricons.R
+ com.oblador.vectoricons.R$anim
+ com.oblador.vectoricons.R$attr
+ com.oblador.vectoricons.R$bool
+ com.oblador.vectoricons.R$color
+ com.oblador.vectoricons.R$dimen
+ com.oblador.vectoricons.R$drawable
+ com.oblador.vectoricons.R$id
+ com.oblador.vectoricons.R$integer
+ com.oblador.vectoricons.R$layout
+ com.oblador.vectoricons.R$string
+ com.oblador.vectoricons.R$style
+ com.oblador.vectoricons.R$styleable
+ com.oblador.vectoricons.R$xml
 cn/nodemedia/R.java
  cn.nodemedia.R
  cn.nodemedia.R$anim
@@ -259,6 +282,18 @@ com/reactlibrary/R.java
  com.reactlibrary.R$xml
 com/facebook/imagepipeline/backends/okhttp3/R.java
  com.facebook.imagepipeline.backends.okhttp3.R
+androidx/media/R.java
+ androidx.media.R
+ androidx.media.R$attr
+ androidx.media.R$color
+ androidx.media.R$dimen
+ androidx.media.R$drawable
+ androidx.media.R$id
+ androidx.media.R$integer
+ androidx.media.R$layout
+ androidx.media.R$string
+ androidx.media.R$style
+ androidx.media.R$styleable
 androidx/lifecycle/viewmodel/R.java
  androidx.lifecycle.viewmodel.R
 com/livestreamexample/MainActivity.java
@@ -290,6 +325,8 @@ androidx/cardview/R.java
  androidx.cardview.R$dimen
  androidx.cardview.R$style
  androidx.cardview.R$styleable
+org/unimodules/apploader/R.java
+ org.unimodules.apploader.R
 com/livestreamexample/ReactNativeFlipper.java
  com.livestreamexample.ReactNativeFlipper
  com.livestreamexample.ReactNativeFlipper$1
@@ -353,6 +390,8 @@ cn/nodemedia/react_native_nodemediaclient/R.java
  cn.nodemedia.react_native_nodemediaclient.R$style
  cn.nodemedia.react_native_nodemediaclient.R$styleable
  cn.nodemedia.react_native_nodemediaclient.R$xml
+org/unimodules/core/R.java
+ org.unimodules.core.R
 androidx/customview/R.java
  androidx.customview.R
  androidx.customview.R$attr
@@ -365,6 +404,21 @@ androidx/customview/R.java
  androidx.customview.R$string
  androidx.customview.R$style
  androidx.customview.R$styleable
+com/reactlibrarypip/R.java
+ com.reactlibrarypip.R
+ com.reactlibrarypip.R$anim
+ com.reactlibrarypip.R$attr
+ com.reactlibrarypip.R$bool
+ com.reactlibrarypip.R$color
+ com.reactlibrarypip.R$dimen
+ com.reactlibrarypip.R$drawable
+ com.reactlibrarypip.R$id
+ com.reactlibrarypip.R$integer
+ com.reactlibrarypip.R$layout
+ com.reactlibrarypip.R$string
+ com.reactlibrarypip.R$style
+ com.reactlibrarypip.R$styleable
+ com.reactlibrarypip.R$xml
 com/swmansion/reanimated/R.java
  com.swmansion.reanimated.R
  com.swmansion.reanimated.R$anim
@@ -445,18 +499,8 @@ com/facebook/flipper/plugins/network/R.java
  com.facebook.flipper.plugins.network.R$string
  com.facebook.flipper.plugins.network.R$style
  com.facebook.flipper.plugins.network.R$styleable
-androidx/vectordrawable/animated/R.java
- androidx.vectordrawable.animated.R
- androidx.vectordrawable.animated.R$attr
- androidx.vectordrawable.animated.R$color
- androidx.vectordrawable.animated.R$dimen
- androidx.vectordrawable.animated.R$drawable
- androidx.vectordrawable.animated.R$id
- androidx.vectordrawable.animated.R$integer
- androidx.vectordrawable.animated.R$layout
- androidx.vectordrawable.animated.R$string
- androidx.vectordrawable.animated.R$style
- androidx.vectordrawable.animated.R$styleable
+com/facebook/react/PackageList.java
+ com.facebook.react.PackageList
 com/rnfs/R.java
  com.rnfs.R
  com.rnfs.R$anim
@@ -512,6 +556,21 @@ com/livestreamexample/R.java
  com.livestreamexample.R$style
  com.livestreamexample.R$styleable
  com.livestreamexample.R$xml
+org/unimodules/adapters/react/R.java
+ org.unimodules.adapters.react.R
+ org.unimodules.adapters.react.R$anim
+ org.unimodules.adapters.react.R$attr
+ org.unimodules.adapters.react.R$bool
+ org.unimodules.adapters.react.R$color
+ org.unimodules.adapters.react.R$dimen
+ org.unimodules.adapters.react.R$drawable
+ org.unimodules.adapters.react.R$id
+ org.unimodules.adapters.react.R$integer
+ org.unimodules.adapters.react.R$layout
+ org.unimodules.adapters.react.R$string
+ org.unimodules.adapters.react.R$style
+ org.unimodules.adapters.react.R$styleable
+ org.unimodules.adapters.react.R$xml
 androidx/lifecycle/viewmodel/savedstate/R.java
  androidx.lifecycle.viewmodel.savedstate.R
 com/swmansion/gesturehandler/react/R.java
@@ -529,23 +588,27 @@ com/swmansion/gesturehandler/react/R.java
  com.swmansion.gesturehandler.react.R$style
  com.swmansion.gesturehandler.react.R$styleable
  com.swmansion.gesturehandler.react.R$xml
-com/oblador/vectoricons/R.java
- com.oblador.vectoricons.R
- com.oblador.vectoricons.R$anim
- com.oblador.vectoricons.R$attr
- com.oblador.vectoricons.R$bool
- com.oblador.vectoricons.R$color
- com.oblador.vectoricons.R$dimen
- com.oblador.vectoricons.R$drawable
- com.oblador.vectoricons.R$id
- com.oblador.vectoricons.R$integer
- com.oblador.vectoricons.R$layout
- com.oblador.vectoricons.R$string
- com.oblador.vectoricons.R$style
- com.oblador.vectoricons.R$styleable
- com.oblador.vectoricons.R$xml
-com/livestreamexample/MainApplication.java
- com.livestreamexample.MainApplication
- com.livestreamexample.MainApplication$1
-com/facebook/react/PackageList.java
- com.facebook.react.PackageList
+androidx/vectordrawable/animated/R.java
+ androidx.vectordrawable.animated.R
+ androidx.vectordrawable.animated.R$attr
+ androidx.vectordrawable.animated.R$color
+ androidx.vectordrawable.animated.R$dimen
+ androidx.vectordrawable.animated.R$drawable
+ androidx.vectordrawable.animated.R$id
+ androidx.vectordrawable.animated.R$integer
+ androidx.vectordrawable.animated.R$layout
+ androidx.vectordrawable.animated.R$string
+ androidx.vectordrawable.animated.R$style
+ androidx.vectordrawable.animated.R$styleable
+androidx/viewpager2/R.java
+ androidx.viewpager2.R
+ androidx.viewpager2.R$attr
+ androidx.viewpager2.R$color
+ androidx.viewpager2.R$dimen
+ androidx.viewpager2.R$drawable
+ androidx.viewpager2.R$id
+ androidx.viewpager2.R$integer
+ androidx.viewpager2.R$layout
+ androidx.viewpager2.R$string
+ androidx.viewpager2.R$style
+ androidx.viewpager2.R$styleable
