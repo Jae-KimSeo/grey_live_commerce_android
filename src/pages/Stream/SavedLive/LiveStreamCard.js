@@ -52,7 +52,8 @@ const styles = StyleSheet.create({
     // backgroundColor: 'rgba(255,255,255,0.5)',
     backgroundColor: 'rgba(0,0,0,0.5)',
     paddingLeft: 5,
-    marginTop: 3,
+    marginTop: 10,
+    marginBottom:20,
     borderRadius: 8,
     // justifyContent: 'flex-end'
   },

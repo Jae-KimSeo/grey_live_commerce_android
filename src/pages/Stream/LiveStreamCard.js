@@ -30,12 +30,12 @@ const styles = StyleSheet.create({
   card: {
     width: '100%',
     height: SCREEN_HEIGHT / 3,
-    flexDirection: 'row',
+    // flexDirection: 'row',
     backgroundColor: 'rgba(rgba(255,255,255,0.5)',
     padding: 3,
     margin:0,
     borderRadius: 8,
-    flexWrap: 'wrap',
+    // flexWrap: 'wrap',
   },
   streamInfo: {
     width: '100%',
@@ -53,7 +53,8 @@ const styles = StyleSheet.create({
     // backgroundColor: 'rgba(255,255,255,0.5)',
     backgroundColor: 'rgba(0,0,0,0.5)',
     paddingLeft: 5,
-    marginTop: 3,
+    marginTop: 10,
+    marginBottom:20,
     borderRadius: 8,
     // justifyContent: 'flex-end'
   },
@@ -167,7 +168,7 @@ const LiveStreamCard = ({ data, onPress, preview }) => {
   }
 
   switch (roomName) {
-    case 'room1':
+    case '페루산 애플망고 당일출고':
       banner = (
         <Image
           source={require('../../assets/001.png')}
@@ -175,7 +176,7 @@ const LiveStreamCard = ({ data, onPress, preview }) => {
         />
       );
       break;
-    case 'room2':
+    case '국산 무농약 작두콩차':
       banner = (
         <Image
           source={require('../../assets/002.png')}
@@ -183,7 +184,7 @@ const LiveStreamCard = ({ data, onPress, preview }) => {
         />
       );
       break;
-    case 'room3':
+    case '안다르 레깅스':
       banner = (
         <Image
           source={require('../../assets/003.png')}
@@ -191,7 +192,7 @@ const LiveStreamCard = ({ data, onPress, preview }) => {
         />
       );
       break;
-    case 'room4':
+    case '모니터 받침대 끝판왕':
       banner = (
         <Image
           source={require('../../assets/004.png')}
@@ -199,7 +200,7 @@ const LiveStreamCard = ({ data, onPress, preview }) => {
         />
       );
       break;
-    case 'room5':
+    case '새학기 노트북 구매하세요':
       banner = (
         <Image
           source={require('../../assets/005.png')}
@@ -207,10 +208,26 @@ const LiveStreamCard = ({ data, onPress, preview }) => {
         />
       );
       break;
-    case 'room6':
+    case '페퍼민트티 25개 할인':
       banner = (
         <Image
           source={require('../../assets/006.png')}
+          style={{ width: SCREEN_WIDTH / 2.2, height: 50 }}
+        />
+      );
+      break;
+    case '돌체구스토 커피캡슐':
+      banner = (
+        <Image
+          source={require('../../assets/007.png')}
+          style={{ width: SCREEN_WIDTH / 2.2, height: 50 }}
+        />
+      );
+      break;
+    case '돌체쿠스도 커피머신':
+      banner = (
+        <Image
+          source={require('../../assets/008.png')}
           style={{ width: SCREEN_WIDTH / 2.2, height: 50 }}
         />
       );

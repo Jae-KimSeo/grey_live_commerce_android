@@ -393,7 +393,7 @@ export default class Viewer extends Component {
 
   renderListMessages = () => {
     const { messages, isVisibleMessages } = this.state;
-    // console.log('message!!', this.state.messages);
+    console.log('message!!', this.state.messages);
     if (!this.state.dragging) {
       if (!isVisibleMessages) return null;
       return <MessagesList messages={messages} />;
@@ -538,13 +538,14 @@ export default class Viewer extends Component {
                 <KeyboardAvoidingView style={{ flex: 1 }} behavior="height" enabled>
                   <View style={styles.contentWrapper}>
                     {isVisible && this.renderTransParencyObject()}
-
-                    <View style={styles.body}>{isVisible && this.renderListMessages()}</View>
-                    {isVisible && this.renderViewerNotification()}
-                    <View style={styles.footer1}>
-                      {!this.state.dragging && this.onPressLinkButton()}
+                    <View style={styles.body}>
+                      {isVisible && this.renderListMessages()}
+                      {isVisible && this.renderViewerNotification()}
+                      <View style={styles.footer1}>
+                        {!this.state.dragging && this.onPressLinkButton()}
+                      </View>
+                      <View style={styles.footer2}>{isVisible && this.renderChatGroup()}</View>
                     </View>
-                    <View style={styles.footer2}>{isVisible && this.renderChatGroup()}</View>
                   </View>
                 </KeyboardAvoidingView>
               </TouchableWithoutFeedback>

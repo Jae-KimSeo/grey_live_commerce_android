@@ -54,7 +54,7 @@ class StreamLive extends React.Component {
       >
         <Container style={styles.container}>
           <FlatList
-            initialNumToRender={4}
+            initialNumToRender={2}
             data={newListLiveStream}
             renderItem={({ item }) => (
               <LiveStreamCard

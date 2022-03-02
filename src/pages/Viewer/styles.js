@@ -82,24 +82,30 @@ const styles = StyleSheet.create({
     fontSize: 28,
   },
 
-  contentWrapper: { flex: 0.95 },
-  body: {
+  contentWrapper: {
     flex: 1,
-    // backgroundColor:'gray',
+  },
+
+  body: {
+    flex: 0.94,
+    flexDirection: 'column',
+    justifyContent: 'flex-end',
+    // height: SCREEN_HEIGHT-150,
+    // backgroundColor: 'blue',
   },
   footer1: {
     width: SCREEN_WIDTH,
-    height: SCREEN_HEIGHT / 10,
-    // flex: 0.15,
+    // flex: 0.1,
+    height: 75,
     flexDirection: 'column',
     // backgroundColor: 'gray',
     alignContent: 'space-between',
     // alignItems:'flex-end',
   },
   footer2: {
-    // flex: 0.1,
+    // flex: 0.07,
     width: SCREEN_WIDTH,
-    height: SCREEN_HEIGHT / 13,
+    height: 50,
     // backgroundColor: 'yellow',
   },
   viewerNotificationBackground: {
