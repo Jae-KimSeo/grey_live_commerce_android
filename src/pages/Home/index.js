@@ -1,19 +1,22 @@
+/* eslint-disable react/jsx-boolean-value */
 import React from 'react';
 import PropTypes from 'prop-types';
-import {View, Text, TouchableOpacity, SafeAreaView, FlatList } from 'react-native';
+import { StatusBar } from 'react-native';
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import get from 'lodash/get';
 import SocketManager from '../../socketManager';
-import styles from './styles';
-import LiveStreamCard from './LiveStreamCard';
-import VideoModal from './Modal.js';
-
+import StreamLive from '../Stream/StreamLive';
+import SavedLive from '../Stream/SavedLive';
+import Header from './Header';
+import Footer from './Footer';
+import Theme from '../Theme/theme';
 
 class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       listLiveStream: [],
-      //previousSteeam: '',
+      preview: true,
     };
   }
 
@@ -24,71 +27,110 @@ class Home extends React.Component {
     });
   }
 
+  onPreviewON = () => {
+    this.setState({
+      preview: true,
+    });
+  };
+
+  onPreviewOFF = () => {
+    this.state.preview = false;
+  };
+
+  onPressLogout = () => {
+    const { route } = this.props;
+    const userName = get(route, 'params.userName', '');
+    const {
+      navigation: { navigate },
+    } = this.props;
+    this.onPreviewOFF();
+    navigate('Login', { userName });
+  };
+
   onPressLiveStreamNow = () => {
     const { route } = this.props;
     const userName = get(route, 'params.userName', '');
     const {
       navigation: { navigate },
     } = this.props;
-    navigate('Input', { userName, roomName: userName});
+    this.onPreviewOFF();
+    navigate('Input', { userName });
   };
-
-  onPressCardItem = (data) => {
-    const { route } = this.props;
-    const userName = get(route, 'params.userName', '');
-    const {
-      navigation: { push },
-    } = this.props;
-    push('Viewer', { userName, data });
-  };
-
 
   render() {
+    const Tab = createMaterialTopTabNavigator();
     const { route } = this.props;
     const userName = get(route, 'params.userName', '');
-    const previousShow = get(route, 'params.show')
-    const roomName = get(route, 'params.roomName')
+    // eslint-disable-next-line no-unused-vars
     const { listLiveStream } = this.state;
-
-    // Only include not cancelled live streams
-    let newListLiveStream = [];
-    for (let i = 0; i < listLiveStream.length; i++) {
-      if (listLiveStream[i].liveStatus !== -1) {
-        newListLiveStream.push(listLiveStream[i])
-      }
-    }
-
     return (
-        
-      <SafeAreaView style={styles.container}>
-        <Text style={styles.welcomeText}>Welcome : {userName}</Text>
-        <Text style={styles.title}>List live stream video</Text>
-        <FlatList
-          contentContainerStyle={styles.flatList}
-          data={newListLiveStream}
-          renderItem={({ item }) => <LiveStreamCard data={item} onPress={this.onPressCardItem} />}
-          keyExtractor={(item) => item._id}
+      <>
+        <StatusBar barStyle="light-content" animated backgroundColor="black" />
+        <Header userName={userName} />
+        <Tab.Navigator
+          lazy={true}
+          optimizationsEnabled={true}
+          removeClippedSubviews={true}
+          lazyPreloadDistance={0}
+          tabBarOptions={{
+            // unmountOnBlur: true,
+            activeTintColor: Theme.color.PrettyRed,
+            inactiveTintColor: Theme.color.LightGray,
+            indicatorStyle: {
+              borderBottomColor: Theme.color.PrettyRed,
+              borderBottomWidth: 4,
+            },
+            lazyPreloadDistance: 1,
+            // lazyPlaceholder:{() => <Text>Loading</Text>},
+            style: { backgroundColor: '#333' },
+            labelStyle: { fontSize: 16, fontWeight: 'bold' },
+          }}
         >
-        </FlatList>
-        <VideoModal show={previousShow} roomName={roomName} />
-        <TouchableOpacity style={styles.liveStreamButton} onPress={this.onPressLiveStreamNow}>
-          <Text style={styles.textButton}>LiveStream Now</Text>
-        </TouchableOpacity>
-      </SafeAreaView>
+          <Tab.Screen
+            name="StreamLive"
+            // component={StreamLive}
+            options={{ tabBarLabel: '진행중인 라이브' }}
+          >
+            {() => (
+              <StreamLive
+                preview={this.state.preview}
+                onPreviewON={this.onPreviewON}
+                onPreviewOFF={this.onPreviewOFF}
+                {...this.props}
+              />
+            )}
+          </Tab.Screen>
+          <Tab.Screen
+            name="SavedLive"
+            component={SavedLive}
+            options={{ tabBarLabel: '지나간 라이브' }}
+          />
+          {/* <Tab.Screen
+            name="UpcomLive"
+            component={Empty}
+            options={{ tabBarLabel: '다가오는 라이브' }}
+          /> */}
+        </Tab.Navigator>
+        <Footer
+          onPressLiveStreamNow={this.onPressLiveStreamNow}
+          onPressLogout={this.onPressLogout}
+        />
+      </>
     );
   }
 }
-
 
 Home.propTypes = {
   route: PropTypes.shape({}),
   navigation: PropTypes.shape({
     navigate: PropTypes.func,
-  }).isRequired, 
+  }).isRequired,
+  preview: PropTypes.bool,
 };
 
 Home.defaultProps = {
   route: null,
+  preview: true,
 };
 
 export default Home;

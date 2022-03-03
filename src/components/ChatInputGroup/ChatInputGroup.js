@@ -5,12 +5,16 @@ import {
   SafeAreaView,
   TextInput,
   TouchableOpacity,
-  Image,
+  // Image,
   Keyboard,
   Platform,
 } from 'react-native';
 import KeyboardAccessory from 'react-native-sticky-keyboard-accessory';
+import AntDesign from 'react-native-vector-icons/AntDesign';
+
 import styles from './styles';
+
+const getRandomNumber = (min, max) => Math.random() * (max - min) + min;
 
 export default class ChatInputGroup extends Component {
   constructor(props) {
@@ -30,6 +34,7 @@ export default class ChatInputGroup extends Component {
 
   onPressHeart = () => {
     const { onPressHeart } = this.props;
+    // console.log(imgArray[0]);
     onPressHeart();
   };
 
@@ -49,33 +54,41 @@ export default class ChatInputGroup extends Component {
   renderContent() {
     const { message } = this.state;
     return (
-      <View style={styles.row}>
-        <TextInput
-          style={styles.textInput}
-          placeholder="Comment input"
-          underlineColorAndroid="transparent"
-          onChangeText={this.onChangeMessageText}
-          value={message}
-          autoCapitalize="none"
-          autoCorrect={false}
-          onEndEditing={this.onEndEditing}
-          onFocus={this.onFocus}
-        />
-        <TouchableOpacity
+      <>
+        {/* <Image source={require('../../assets/001.png')} style={{width:200, height:50}} /> */}
+        <View style={styles.row}>
+          <TextInput
+            style={styles.textInput}
+            placeholder="메시지를 입력해주세요"
+            placeholderTextColor={'white'}
+            backgroundColor='transparent'
+            underlineColorAndroid="transparent"
+            onChangeText={this.onChangeMessageText}
+            value={message}
+            autoCapitalize="none"
+            autoCorrect={false}
+            onEndEditing={this.onEndEditing}
+            onFocus={this.onFocus}
+            onSubmitEditing={this.onPressSend}
+            multiline={false}
+            returnKeyType="done"
+          />
+          {/* <TouchableOpacity
           style={styles.wrapIconSend}
           onPress={this.onPressSend}
           activeOpacity={0.6}
         >
           <Image source={require('../../assets/ico_send.png')} style={styles.iconSend} />
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={styles.wrapIconHeart}
-          onPress={this.onPressHeart}
-          activeOpacity={0.6}
-        >
-          <Image source={require('../../assets/ico_heart.png')} style={styles.iconHeart} />
-        </TouchableOpacity>
-      </View>
+        </TouchableOpacity> */}
+          <TouchableOpacity
+            style={styles.wrapIconHeart}
+            onPress={this.onPressHeart}
+            activeOpacity={0.6}
+          >
+            <AntDesign name="heart" size={40} color="#FF097D" />
+          </TouchableOpacity>
+        </View>
+      </>
     );
   }
 
@@ -85,7 +98,7 @@ export default class ChatInputGroup extends Component {
     }
     return (
       <SafeAreaView style={styles.wrapper}>
-        <View style={styles.flex1}>
+        <View style={{ flex: 1 }}>
           <KeyboardAccessory backgroundColor="transparent">
             {this.renderContent()}
           </KeyboardAccessory>

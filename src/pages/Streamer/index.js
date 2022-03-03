@@ -10,6 +10,7 @@ import {
 } from 'react-native';
 import { NodeCameraView } from 'react-native-nodemediaclient';
 import get from 'lodash/get';
+import { NavigationContext } from '@react-navigation/native';
 import { LIVE_STATUS, videoConfig, audioConfig } from '../../utils/constants';
 import SocketManager from '../../socketManager';
 import styles from './styles';
@@ -19,26 +20,25 @@ import MessagesList from '../../components/MessagesList/MessagesList';
 import FloatingHearts from '../../components/FloatingHearts';
 import { RTMP_SERVER } from '../../config';
 import Logger from '../../utils/logger';
-import { NavigationContext } from '@react-navigation/native';
 
 export default class Streamer extends React.Component {
   constructor(props) {
     super(props);
     const { route } = props;
-    const roomName = get(route, 'params.roomName');
     const userName = get(route, 'params.userName', '');
-    const enteredRoomName = get(route, 'params.enteredRoomName');
-    const enteredProductLink = get(route, 'params.enteredProductLink');
+    const roomName = get(route, 'params.roomName');
+    const productLink = get(route, 'params.productLink');
+    const productPrice = get(route, 'params.productPrice');
     this.state = {
       currentLiveStatus: LIVE_STATUS.PREPARE,
       messages: [],
       countHeart: 0,
       isVisibleMessages: true,
     };
-    this.roomName = roomName;
     this.userName = userName;
-    this.enteredRoomName = enteredRoomName;
-    this.enteredProductLink = enteredProductLink;
+    this.roomName = roomName;
+    this.productLink = productLink;
+    this.productPrice = productPrice;
   }
 
   componentDidMount() {
@@ -46,8 +46,8 @@ export default class Streamer extends React.Component {
     SocketManager.instance.emitPrepareLiveStream({
       userName: this.userName,
       roomName: this.roomName,
-      enteredRoomName: this.enteredRoomName,
-      enteredProductLink: this.enteredProductLink,
+      productLink: this.productLink,
+      productPrice: this.productPrice,
     });
     SocketManager.instance.emitJoinRoom({
       userName: this.userName,
@@ -72,10 +72,6 @@ export default class Streamer extends React.Component {
 
   componentWillUnmount() {
     if (this.nodeCameraViewRef) this.nodeCameraViewRef.stop();
-    SocketManager.instance.emitLeaveRoom({
-      userName: this.userName,
-      roomName: this.roomName,
-    });
   }
 
   onPressHeart = () => {
@@ -102,7 +98,7 @@ export default class Streamer extends React.Component {
   onPressClose = () => {
     const { navigation, route } = this.props;
     const userName = get(route, 'params.userName', '');
-    SocketManager.instance.emitCancelLiveStream({ userName, roomName: userName })
+    SocketManager.instance.emitCancelLiveStream({ userName, roomName: this.roomName });
     navigation.pop(2);
   };
 
@@ -114,15 +110,15 @@ export default class Streamer extends React.Component {
       /**
        * Waiting live stream
        */
-      SocketManager.instance.emitBeginLiveStream({ userName, roomName: userName });
-      SocketManager.instance.emitJoinRoom({ userName, roomName: userName });
-      if (this.nodeCameraViewRef) this.nodeCameraViewRef.start();  
-      NavigationContext;    
+      SocketManager.instance.emitBeginLiveStream({ userName, roomName: this.roomName });
+      // SocketManager.instance.emitJoinRoom({ userName, roomName: userName });
+      if (this.nodeCameraViewRef) this.nodeCameraViewRef.start();
+      NavigationContext;
     } else if (Number(currentLiveStatus) === Number(LIVE_STATUS.ON_LIVE)) {
       /**
        * Finish live stream
        */
-      SocketManager.instance.emitFinishLiveStream({ userName, roomName: userName });
+      SocketManager.instance.emitFinishLiveStream({ userName, roomName: this.roomName });
       if (this.nodeCameraViewRef) this.nodeCameraViewRef.stop();
       Alert.alert(
         'Alert ',
@@ -132,7 +128,7 @@ export default class Streamer extends React.Component {
             text: 'Okay',
             onPress: () => {
               navigation.pop(2);
-              SocketManager.instance.emitLeaveRoom({ userName, roomName: userName });
+              SocketManager.instance.emitLeaveRoom({ userName, roomName: this.roomName });
             },
           },
         ],
@@ -146,9 +142,9 @@ export default class Streamer extends React.Component {
       const granted = await PermissionsAndroid.requestMultiple(
         [PermissionsAndroid.PERMISSIONS.CAMERA, PermissionsAndroid.PERMISSIONS.RECORD_AUDIO],
         {
-          title: 'LiveStreamExample need Camera And Microphone Permission',
+          title: 'superlivecommerce need Camera And Microphone Permission',
           message:
-            'LiveStreamExample needs access to your camera so you can take awesome pictures.',
+            'superlivecommerce needs access to your camera so you can take awesome pictures.',
           buttonNeutral: 'Ask Me Later',
           buttonNegative: 'Cancel',
           buttonPositive: 'OK',
@@ -192,7 +188,8 @@ export default class Streamer extends React.Component {
     const { route } = this.props;
     const { currentLiveStatus, countHeart } = this.state;
     const userName = get(route, 'params.userName', '');
-    const outputUrl = `${RTMP_SERVER}/live/${userName}`;
+    const roomName = get(route, 'params.roomName');
+    const outputUrl = `${RTMP_SERVER}/live/${roomName}`;
     return (
       <SafeAreaView style={styles.container}>
         <NodeCameraView
@@ -219,11 +216,8 @@ export default class Streamer extends React.Component {
               onPress={this.onPressLiveStreamButton}
             />
           </View>
-          <View style={styles.center} />
-          <View style={styles.footer}>
-            {this.renderChatGroup()}
-            {this.renderListMessages()}
-          </View>
+          <View style={styles.center}>{this.renderListMessages()}</View>
+          <View style={styles.footer}>{this.renderChatGroup()}</View>
         </SafeAreaView>
         <FloatingHearts count={countHeart} />
       </SafeAreaView>

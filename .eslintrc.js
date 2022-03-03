@@ -15,12 +15,14 @@ module.exports = {
         trailingComma: 'es5',
         singleQuote: true,
         printWidth: 100,
+        endOfLine: 'auto',
       },
     ],
     'global-require': 0,
     'class-methods-use-this': 0,
     'no-underscore-dangle': 0,
     'react/jsx-props-no-spreading': 0,
+    "no-console": "off"
   },
   plugins: ['prettier'],
 };

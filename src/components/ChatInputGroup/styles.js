@@ -10,13 +10,8 @@ const styles = StyleSheet.create({
     right: 0,
     marginHorizontal: 15,
   },
-  flex1: {
-    flex: 1,
-  },
   row: {
-    flex: 1,
     flexDirection: 'row',
-    marginBottom: 10,
   },
   col: {
     flex: 1,
@@ -24,16 +19,20 @@ const styles = StyleSheet.create({
   },
   textInput: {
     flex: 1,
+    color: 'white',
+    fontSize:15,
     backgroundColor: 'rgba(255, 255, 255, 0.4)',
     borderRadius: 10,
     paddingHorizontal: 15,
     height: 45,
+    borderColor: 'white',
+    borderWidth: 1,
   },
   wrapIconHeart: {
     width: 45,
     height: 45,
     borderRadius: 45,
-    backgroundColor: 'white',
+    backgroundColor: 'transparent',
     justifyContent: 'center',
     alignItems: 'center',
     marginLeft: 8,
